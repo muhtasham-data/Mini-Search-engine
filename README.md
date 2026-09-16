@@ -11,3 +11,4 @@ Match Counting & Scoring: Calculates relevance scores based on total keyword occ
 Result Ranking: Stores file scores in a std::vector and sorts them in descending order using std::sort.
 
 Clean CLI Output: Displays formatted search results along with calculated match scores.
+corns: "My implementation scans every document for every query. This is simple but scales poorly. A future version could build an inverted index in memory."

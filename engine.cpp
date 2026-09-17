@@ -3,9 +3,9 @@
 using std::cout,std::cin,std::getline;engine master;
 void engine::getquery(){
     cout<<"Enter your Query: ";
-    getline(cin,query);
+    getline(cin,query1);
     o.open("data/query");
-    o<<query;
+    o<<query1;
     o.close();
 }
 string engine::cleanWord(const string& input) {
@@ -42,10 +42,25 @@ void engine::output(){
         cout<<"In "<<x.query<<": "<<x.count<<"\n";
     }
 }   
+void engine::manager(){
+    while (true)
+    {
+        cout<<"=================================================\n";
+        cout<<"Mini Search engine | You can exit by entering q\n";
+        cout<<"=================================================\n";
+        master.getquery();
+        if(query1=="q"||query1=="Q"){
+            return;
+        }
+        cout<<"==============================\n";
+        cout<<"\tOutput OR Results\n";
+        cout<<"==============================\n";
+        master.search("doc1.txt");
+        master.search("doc2.txt");
+        master.search("doc3.txt");
+        master.output();
+    }
+}
 int main(){
-    master.getquery();
-    master.search("doc1.txt");
-    master.search("doc2.txt");
-    master.search("doc3.txt");
-    master.output();
+    master.manager(); 
 }

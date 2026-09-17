@@ -11,12 +11,13 @@ struct engine{
         string query;
         data(string a,int b):query(a),count(b){}
     };
-    int count;string query,filename,dataa,dataq;
+    int count;string query1,filename,dataa,dataq;
     ofstream o;ifstream i;
     vector<data>db;
     void getquery();
     void search(string filename);
     void output();
     string cleanWord(const string& input);
+    void manager();
 };
 extern engine master;
